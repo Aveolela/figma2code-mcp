@@ -1,7 +1,14 @@
 import { FigmaServer, ServerOptions } from './server.js'
 
-// 创建并启动服务器
-const figmaServer = new FigmaServer({
-  exportsPath: './exports'
-});
-figmaServer.start();
+let figmaServer: FigmaServer | null = null;
+
+export async function startFigmaServer(options: ServerOptions = {}) {
+  if (figmaServer && figmaServer.getStatus().isRunning) return figmaServer;
+  figmaServer = new FigmaServer(options);
+  await figmaServer.start();
+  return figmaServer;
+}
+
+export function getFigmaServer() {
+  return figmaServer;
+}

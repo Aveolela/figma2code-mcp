@@ -90,6 +90,17 @@ class F2CServer {
   }
 }
 
-// 启动服务器
+// 启动 MCP 服务器并在连接成功后启动 Figma HTTP 服务
+import { startFigmaServer } from './server/index.js';
+
 const server = new F2CServer();
-server.run().catch(console.error);
+server.run()
+  .then(async () => {
+    try {
+      await startFigmaServer({ exportsPath: './exports' });
+      console.error('Figma HTTP server started after MCP connected');
+    } catch (err) {
+      console.error('Failed to start Figma HTTP server:', err);
+    }
+  })
+  .catch(console.error);
