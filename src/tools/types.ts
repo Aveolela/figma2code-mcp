@@ -9,10 +9,15 @@ export interface Tool {
   };
 }
 
-import { CallToolResult } from '@modelcontextprotocol/sdk/types.js';
-
 // 工具处理结果接口
-export type ToolResult = CallToolResult;
+export type ToolResult = {
+  content: Array<
+    | { type: 'text'; text: string }
+    | { type: 'image'; url: string }
+    | { type: 'resource'; url: string }
+    | { type: 'json'; data: any }
+  >;
+};
 
 // 工具处理器接口
 export interface ToolHandler {
