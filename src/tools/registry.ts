@@ -1,10 +1,7 @@
 import { Tool, ToolHandler } from './types.js';
-import { calculatorTool, CalculatorHandler } from './calculator.js';
-import { textProcessorTool, TextProcessorHandler } from './textProcessor.js';
-import { figmaHelperTool, FigmaHelperHandler } from './figmaHelper.js';
 import { exportsListTool, ExportsListHandler } from './transform_figma_export.js';
 
-// 工具注册表
+// 只注册 transform_figma_export 工具
 interface ToolRegistration {
   tool: Tool;
   handler: ToolHandler;
@@ -14,13 +11,6 @@ class ToolRegistry {
   private tools: Map<string, ToolRegistration> = new Map();
 
   constructor() {
-    this.registerDefaultTools();
-  }
-
-  private registerDefaultTools(): void {
-    this.register(calculatorTool, new CalculatorHandler());
-    this.register(textProcessorTool, new TextProcessorHandler());
-    this.register(figmaHelperTool, new FigmaHelperHandler());
     this.register(exportsListTool, new ExportsListHandler());
   }
 
