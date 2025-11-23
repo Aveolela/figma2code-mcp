@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export const exportsListTool: Tool = {
-  name: 'f2c',
+  name: 'transform_figma_export',
   description: '读取指定目录下的 HTML 文件，并指示大模型进行语义化组件重构（包含图片资源迁移）',
   inputSchema: {
     type: 'object',

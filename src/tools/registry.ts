@@ -2,7 +2,7 @@ import { Tool, ToolHandler } from './types.js';
 import { calculatorTool, CalculatorHandler } from './calculator.js';
 import { textProcessorTool, TextProcessorHandler } from './textProcessor.js';
 import { figmaHelperTool, FigmaHelperHandler } from './figmaHelper.js';
-import { exportsListTool, ExportsListHandler } from './exportsList.js';
+import { exportsListTool, ExportsListHandler } from './transform_figma_export.js';
 
 // 工具注册表
 interface ToolRegistration {
