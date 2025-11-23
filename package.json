@@ -2,7 +2,6 @@
   "name": "figma2code-mcp",
   "version": "0.1.0",
   "description": "A Model Context Protocol server",
-  "private": true,
   "type": "module",
   "bin": {
     "f2c": "./build/index.js"
