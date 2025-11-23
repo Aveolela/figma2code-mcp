@@ -1,5 +1,5 @@
 {
-  "name": "f2c",
+  "name": "figma2code-mcp",
   "version": "0.1.0",
   "description": "A Model Context Protocol server",
   "private": true,
@@ -8,7 +8,10 @@
     "f2c": "./build/index.js"
   },
   "files": [
-    "build"
+    "build",
+    "package.json",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
