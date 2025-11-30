@@ -70,8 +70,6 @@ class F2CServer {
     });
   }
 
-
-
   private setupErrorHandler(): void {
     this.server.onerror = (error) => {
       console.error('[MCP Error]', error);
@@ -97,10 +95,10 @@ const server = new F2CServer();
 server.run()
   .then(async () => {
     try {
-      await startFigmaServer({ exportsPath: './exports' });
-      console.error('Figma HTTP server started after MCP connected');
+      await startFigmaServer();
+      console.error('Figma ws server started after MCP connected');
     } catch (err) {
-      console.error('Failed to start Figma HTTP server:', err);
+      console.error('Failed to start Figma ws server:', err);
     }
   })
   .catch(console.error);

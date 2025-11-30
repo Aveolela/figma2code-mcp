@@ -1,10 +1,9 @@
-import { FigmaServer, ServerOptions } from './server.js'
+import { FigmaServer } from './server.js'
 
 let figmaServer: FigmaServer | null = null;
 
-export async function startFigmaServer(options: ServerOptions = {}) {
-  if (figmaServer && figmaServer.getStatus().isRunning) return figmaServer;
-  figmaServer = new FigmaServer(options);
+export async function startFigmaServer() {
+  figmaServer = new FigmaServer();
   await figmaServer.start();
   return figmaServer;
 }

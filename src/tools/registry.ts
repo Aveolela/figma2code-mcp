@@ -1,7 +1,7 @@
 import { Tool, ToolHandler } from './types.js';
-import { exportsListTool, ExportsListHandler } from './transform_figma_export.js';
+import { exportsListTool, ExportsListHandler } from './fetchFigmaData.js';
+import { tempPathTool, TempPathHandler } from './tempPath.js';
 
-// 只注册 transform_figma_export 工具
 interface ToolRegistration {
   tool: Tool;
   handler: ToolHandler;
@@ -12,6 +12,7 @@ class ToolRegistry {
 
   constructor() {
     this.register(exportsListTool, new ExportsListHandler());
+    this.register(tempPathTool, new TempPathHandler());
   }
 
   register(tool: Tool, handler: ToolHandler): void {

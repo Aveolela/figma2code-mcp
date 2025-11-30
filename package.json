@@ -1,6 +1,6 @@
 {
   "name": "figma2code-mcp",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A Model Context Protocol server",
   "type": "module",
   "bin": {
@@ -24,10 +24,12 @@
     "@types/express": "^5.0.5",
     "@types/fs-extra": "^11.0.4",
     "@types/uuid": "^10.0.0",
+    "@types/ws": "^8.18.1",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "fs-extra": "^11.3.2",
-    "uuid": "^13.0.0"
+    "uuid": "^13.0.0",
+    "ws": "^8.18.3"
   },
   "devDependencies": {
     "@types/node": "^20.19.25",
