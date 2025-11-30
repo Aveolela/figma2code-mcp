@@ -1,16 +1,21 @@
 {
   "name": "figma2code-mcp",
-  "version": "1.0.0",
-  "description": "A Model Context Protocol server",
+  "version": "1.0.1",
+  "description": "Convert Figma design data to code",
   "type": "module",
   "bin": {
-    "f2c": "./build/index.js"
+    "figma2code": "./build/index.js"
   },
   "files": [
     "build",
     "package.json",
     "README.md",
     "LICENSE"
+  ],
+  "keywords": [
+    "figma",
+    "figma2code",
+    "mcp"
   ],
   "scripts": {
     "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
@@ -20,12 +25,9 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "0.6.0",
-    "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.5",
     "@types/fs-extra": "^11.0.4",
     "@types/uuid": "^10.0.0",
     "@types/ws": "^8.18.1",
-    "cors": "^2.8.5",
     "express": "^5.1.0",
     "fs-extra": "^11.3.2",
     "uuid": "^13.0.0",
